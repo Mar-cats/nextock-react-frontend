@@ -1,7 +1,12 @@
 import Routes from "./routes";
+import { Provider } from "@/components/ui/provider";
 
 function App() {
-  return <Routes />;
+  return (
+    <Provider>
+      <Routes />
+    </Provider>
+  );
 }
 
 export default App;

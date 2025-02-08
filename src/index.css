@@ -127,3 +127,35 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+* {
+  --color-blue-100: #edf1ff;
+  --color-blue-200: #e0e8ff;
+  --color-blue-300: #d1ddff;
+  --color-blue-400: #c0ceff;
+  --color-blue-500: #a9baff;
+  --color-blue-600: #8b9dff;
+  --color-blue-700: #4a3dff;
+  --color-blue-800: #4036df;
+  --color-blue-900: #22256f;
+  --color-color-black: #1a1f2d;
+  --color-color-white: #ffffff;
+  --color-gray-100: #edf0f9;
+  --color-gray-200: #e4e8f4;
+  --color-gray-300: #dbe1f0;
+  --color-gray-400: #d3daec;
+  --color-gray-500: #c6cee5;
+  --color-gray-600: #b1bbd7;
+  --color-gray-700: #838da8;
+  --color-gray-800: #79839d;
+  --color-gray-900: #5c6479;
+  --color-red-100: #ffe9e6;
+  --color-red-200: #ffd7cf;
+  --color-red-300: #ffc8be;
+  --color-red-400: #ffb7ac;
+  --color-red-500: #fea398;
+  --color-red-600: #f4897d;
+  --color-red-700: #ff584d;
+  --color-red-800: #d9322d;
+  --color-red-900: #5c2823;
+}
