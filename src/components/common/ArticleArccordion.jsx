@@ -6,7 +6,7 @@ import {
   AccordionRoot
 } from "@/components/ui/Accordion";
 import styled from "styled-components";
-import Tags from "@/components/common/Tags";
+import Tags from "@/components/common/Hashtags";
 
 const SubTitle = styled.h2`
   font-size: 12px;
