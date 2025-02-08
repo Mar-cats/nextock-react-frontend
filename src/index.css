@@ -88,7 +88,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -128,7 +127,17 @@ table {
   border-spacing: 0;
 }
 
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-display: swap;
+  src: url("../public/fonts/Pretendard.woff2") format("woff2-variations");
+}
+
 * {
+  box-sizing: border-box;
+  font-family: "Pretendard", sans-serif;
+
   --color-blue-100: #edf1ff;
   --color-blue-200: #e0e8ff;
   --color-blue-300: #d1ddff;
