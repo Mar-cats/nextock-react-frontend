@@ -13,7 +13,7 @@ const Select = () => {
     <SelectRoot
       collection={frameworks}
       defaultValue={["day"]}
-      width='46px'
+      width='60px'
       variant='filled'
     >
       <SelectTrigger>
@@ -21,7 +21,7 @@ const Select = () => {
       </SelectTrigger>
       <SelectContent>
         {frameworks.items.map((unit) => (
-          <SelectItem item={unit} key={unit.value} p={2}>
+          <SelectItem item={unit} key={unit.value}>
             {unit.label}
           </SelectItem>
         ))}
