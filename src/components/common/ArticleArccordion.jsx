@@ -6,7 +6,6 @@ import {
   AccordionRoot
 } from "@/components/ui/Accordion";
 import styled from "styled-components";
-import Tags from "@/components/common/Hashtags";
 
 const SubTitle = styled.h2`
   font-size: 12px;
@@ -47,9 +46,6 @@ const ArticleAccodion = ({ value, title, text, tags }) => {
               <img src='https://placehold.co/70x60' />
             </Flex>
           </AccordionItemTrigger>
-          <Flex ps={"30px"}>
-            <Tags tags={tags} />
-          </Flex>
         </Box>
         <AccordionItemContent>
           <Flex direction='column' ps='30px' pt={"10px"}>
