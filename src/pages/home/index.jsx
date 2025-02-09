@@ -2,23 +2,16 @@ import GlobalNavigationBar from "@/components/layout/GlobalNavigationBar";
 import { Flex } from "@chakra-ui/react";
 import LayoutContainer from "@/components/layout/LayoutContainer";
 import BottomNavigationBar from "@/components/layout/BottomNavigationBar";
-import {
-  ArticleAccodion,
-  ArticleAccodionRoot
-} from "@/components/common/ArticleArccordion";
+import HotTrend from "@/pages/home/components/HotTrend";
+import News from "@/pages/home/components/News";
 
 export default function () {
   return (
     <LayoutContainer>
       <GlobalNavigationBar />
-      <Flex flex={1} direction={"column"} px={"20px"} gap={"20px"}>
-        <ArticleAccodionRoot>
-          <ArticleAccodion
-            title={"제목"}
-            text={"blablablabla"}
-            tags={["태그1", "태그2", "태그3", "태그4", "태그5"]}
-          />
-        </ArticleAccodionRoot>
+      <Flex flex={1} direction={"column"} px={"20px"} gap={"60px"}>
+        <HotTrend />
+        <News />
       </Flex>
       <BottomNavigationBar />
     </LayoutContainer>
