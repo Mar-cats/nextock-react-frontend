@@ -6,7 +6,12 @@ import PillTags from "@/components/common/PillTags";
 export default function () {
   return (
     <LayoutContainer>
-      <GlobalNavigationBar />
+      <GlobalNavigationBar
+        logo={false}
+        back={true}
+        search={false}
+        searchInput={true}
+      />
       <Flex flex={1} direction={"column"} px={"20px"} gap={"20px"}>
         <PillTags tags={["태그1", "태그2", "태그3", "태그4", "태그5"]} />
         <PillTags
