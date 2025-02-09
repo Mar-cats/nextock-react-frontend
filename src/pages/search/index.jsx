@@ -1,7 +1,8 @@
 import GlobalNavigationBar from "@/components/layout/GlobalNavigationBar";
 import LayoutContainer from "@/components/layout/LayoutContainer";
 import { Flex } from "@chakra-ui/react";
-import PillTags from "@/components/common/PillTags";
+import RecentSearch from "@/pages/search/components/RecentSearch";
+import PopularSearch from "@/pages/search/components/PopularSearch";
 
 export default function () {
   return (
@@ -12,12 +13,9 @@ export default function () {
         search={false}
         searchInput={true}
       />
-      <Flex flex={1} direction={"column"} px={"20px"} gap={"20px"}>
-        <PillTags tags={["태그1", "태그2", "태그3", "태그4", "태그5"]} />
-        <PillTags
-          tags={["태그1", "태그2", "태그3", "태그4", "태그5"]}
-          onClose={() => {}}
-        />
+      <Flex flex={1} direction={"column"} p={"6px 20px 0"} gap={"56px"}>
+        <RecentSearch />
+        <PopularSearch />
       </Flex>
     </LayoutContainer>
   );
