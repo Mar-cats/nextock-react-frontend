@@ -1,7 +1,9 @@
-import { Box, Flex, VStack } from "@chakra-ui/react";
+import { Flex, VStack } from "@chakra-ui/react";
 import Select from "@/components/common/Select";
 import Title from "@/components/common/Title";
 import WordCloud from "@/components/common/WordCloud";
+import { useState } from "react";
+import { unitToString } from "@/utils/string";
 
 export default function () {
   const words = [
@@ -56,11 +58,12 @@ export default function () {
       changePercent: "+3%"
     }
   ];
+  const [unit, setUnit] = useState(["day"]);
   return (
     <VStack gap={"8px"}>
       <Flex justify={"space-between"} w={"100%"}>
-        <Title>Hot Trend</Title>
-        <Select />
+        <Title>{unitToString(unit[0])}간 트렌드</Title>
+        <Select value={unit} setValue={setUnit} />
       </Flex>
       <WordCloud words={words} />
     </VStack>

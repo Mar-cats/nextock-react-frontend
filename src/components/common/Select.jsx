@@ -1,4 +1,4 @@
-import { For, Stack, createListCollection } from "@chakra-ui/react";
+import { createListCollection } from "@chakra-ui/react";
 import {
   SelectContent,
   SelectItem,
@@ -8,16 +8,19 @@ import {
   SelectValueText
 } from "@/components/ui/select";
 
-const Select = () => {
+const Select = ({ value, setValue }) => {
   return (
     <SelectRoot
       collection={frameworks}
       defaultValue={["day"]}
-      width='60px'
-      variant='filled'
+      width="60px"
+      variant="filled"
+      value={value}
+      onValueChange={(e) => setValue(e.value)}
+      color="var(--color-gray-900)"
     >
       <SelectTrigger>
-        <SelectValueText placeholder='Select Unit' />
+        <SelectValueText placeholder="Select Unit" />
       </SelectTrigger>
       <SelectContent>
         {frameworks.items.map((unit) => (
