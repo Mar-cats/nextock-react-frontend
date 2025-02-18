@@ -1,4 +1,4 @@
-import { Flex, IconButton, Image } from "@chakra-ui/react";
+import { Flex, IconButton, Image, HStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { ROUTES_PATH_HOME, ROUTES_PATH_SEARCH } from "@/constants/routes";
 import { LuSearch } from "react-icons/lu";
@@ -6,6 +6,7 @@ import { GoChevronLeft } from "react-icons/go";
 import styled from "styled-components";
 import SearchInput from "@/components/common/SearchInput";
 import LogoSVG from "@/assets/icons/icon_30.svg";
+import ThemeChanger from "../common/ThemeChanger";
 
 const NavTitle = styled.h1`
   font-size: 18px;
@@ -19,7 +20,8 @@ const GlobalNavigationBar = ({
   back = false,
   title = "",
   searchInput = false,
-  search = true
+  search = true,
+  themeChanger = true
 }) => {
   return (
     <Flex justify="space-between" align="center" p={4}>
@@ -43,17 +45,20 @@ const GlobalNavigationBar = ({
       )}
       {title && <NavTitle>{title}</NavTitle>}
       {searchInput && <SearchInput />}
-      {search && (
-        <Link to={ROUTES_PATH_SEARCH}>
-          <IconButton
-            variant={"ghost"}
-            aria-label="Search"
-            color={"var(--color-gray-900)"}
-          >
-            <LuSearch />
-          </IconButton>
-        </Link>
-      )}
+      <HStack spacing={4} align="center">
+        {search && (
+          <Link to={ROUTES_PATH_SEARCH}>
+            <IconButton
+              variant={"ghost"}
+              aria-label="Search"
+              color={"var(--color-gray-900)"}
+            >
+              <LuSearch />
+            </IconButton>
+          </Link>
+        )}
+        {themeChanger && <ThemeChanger />}
+      </HStack>
     </Flex>
   );
 };

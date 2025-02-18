@@ -12,6 +12,7 @@ export default function () {
         back={true}
         search={false}
         searchInput={true}
+        themeChanger={false}
       />
       <ContentContainer p={"6px 20px 0"} gap={"56px"}>
         <RecentSearch />

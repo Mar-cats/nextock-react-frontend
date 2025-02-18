@@ -7,7 +7,7 @@ import ContentContainer from "@/components/layout/ContentContainer";
 export default function () {
   return (
     <LayoutContainer>
-      <GlobalNavigationBar />
+      <GlobalNavigationBar themeChanger={false} />
       <ContentContainer>
         <TrendChart />
       </ContentContainer>
