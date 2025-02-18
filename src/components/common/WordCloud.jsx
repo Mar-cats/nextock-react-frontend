@@ -26,6 +26,7 @@ const WordItem = styled(GridItem)`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-radius: 4px;
   color: var(--color-purple-50);
   &:nth-last-child(3),
   &:nth-last-child(2),
@@ -51,7 +52,7 @@ const WordDescription = styled.div`
 const WordCloud = ({ words }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Container>
+    <Container gap={1}>
       <WordContainer h={isOpen ? "416px" : "360px"}>
         {GRID_LAYOUTS[new Date().getDate() % 6].map((layout) => (
           <WordItem
@@ -73,6 +74,8 @@ const WordCloud = ({ words }) => {
         w={"100%"}
         aria-label={isOpen ? "Close" : "Open"}
         onClick={() => setIsOpen(!isOpen)}
+        backgroundColor={"var(--color-gray-100)"}
+        color={"var(--color-gray-900)"}
       >
         <HStack justify={"center"} align={"center"} gap={0}>
           {isOpen ? (
