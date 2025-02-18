@@ -9,6 +9,7 @@ import {
 
 import Home from "../pages/home";
 import Search from "@/pages/search";
+import Sector from "@/pages/sector";
 
 const RootNavigator = () => {
   return <Navigate to={ROUTES_PATH_HOME} />;
@@ -19,10 +20,10 @@ export default function () {
     <BrowserRouter basename={ROUTES_BASENAME}>
       <Routes>
         <Route path={ROUTES_PATH_HOME} element={<Home />} />
-        <Route path={ROUTES_PATH_SECTOR} element={<>sector</>} />
+        <Route path={ROUTES_PATH_SECTOR} element={<Sector />} />
         <Route path={ROUTES_PATH_SEARCH} element={<Search />} />
         <Route path={ROUTES_PATH_ROOT} element={<RootNavigator />} />
-        <Route path='*' element={<RootNavigator />} />
+        <Route path="*" element={<RootNavigator />} />
       </Routes>
     </BrowserRouter>
   );
