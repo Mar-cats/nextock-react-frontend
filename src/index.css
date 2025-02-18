@@ -2,7 +2,7 @@
   font-family: "Pretendard";
   font-style: normal;
   font-display: swap;
-  src: url("../public/fonts/Pretendard.woff2") format("woff2-variations");
+  src: url("/fonts/Pretendard.woff2") format("woff2-variations");
 }
 
 * {
