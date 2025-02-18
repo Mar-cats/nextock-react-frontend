@@ -26,6 +26,12 @@ const WordItem = styled(GridItem)`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  color: var(--color-purple-50);
+  &:nth-last-child(3),
+  &:nth-last-child(2),
+  &:nth-last-child(1) {
+    color: var(--color-purple-1000);
+  }
 `;
 
 const WordTitle = styled.div`
@@ -47,7 +53,7 @@ const WordCloud = ({ words }) => {
   return (
     <Container>
       <WordContainer h={isOpen ? "416px" : "360px"}>
-        {GRID_LAYOUTS[0].map((layout) => (
+        {GRID_LAYOUTS[new Date().getDate() % 6].map((layout) => (
           <WordItem
             key={layout.idx}
             colSpan={layout.w}
