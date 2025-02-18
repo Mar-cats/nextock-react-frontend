@@ -9,13 +9,18 @@ const SearchInput = () => {
   const handleClear = () => setSearchValue("");
   return (
     <InputGroup
-      flex='1'
-      startElement={<LuSearch />}
-      endElement={searchValue && <IoCloseOutline onClick={handleClear} />}
+      flex="1"
+      startElement={<LuSearch color="var(--color-gray-800)" />}
+      endElement={
+        searchValue && (
+          <IoCloseOutline onClick={handleClear} color="var(--color-gray-800)" />
+        )
+      }
     >
       <Input
-        placeholder='검색어를 입력해주세요'
-        variant='subtle'
+        placeholder="검색어를 입력해주세요"
+        variant="subtle"
+        color={"var(--color-color-black)"}
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />

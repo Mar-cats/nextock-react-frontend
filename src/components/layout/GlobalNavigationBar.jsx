@@ -1,11 +1,11 @@
-import { Flex, IconButton } from "@chakra-ui/react";
+import { Flex, IconButton, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { ROUTES_PATH_HOME, ROUTES_PATH_SEARCH } from "@/constants/routes";
 import { LuSearch } from "react-icons/lu";
-import { BiLogoBaidu } from "react-icons/bi";
 import { GoChevronLeft } from "react-icons/go";
 import styled from "styled-components";
 import SearchInput from "@/components/common/SearchInput";
+import LogoSVG from "@/assets/icons/icon_30.svg";
 
 const NavTitle = styled.h1`
   font-size: 18px;
@@ -22,17 +22,21 @@ const GlobalNavigationBar = ({
   search = true
 }) => {
   return (
-    <Flex justify='space-between' align='center' p={4}>
+    <Flex justify="space-between" align="center" p={4}>
       {logo && (
         <Link to={ROUTES_PATH_HOME}>
-          <IconButton variant={"ghost"} aria-label='Home'>
-            <BiLogoBaidu />
+          <IconButton variant={"ghost"} aria-label="Home">
+            <Image src={LogoSVG} alt="Logo" />
           </IconButton>
         </Link>
       )}
       {back && (
         <Link to={ROUTES_PATH_HOME}>
-          <IconButton variant={"ghost"} aria-label='Search'>
+          <IconButton
+            variant={"ghost"}
+            aria-label="Search"
+            color={"var(--color-gray-900)"}
+          >
             <GoChevronLeft />
           </IconButton>
         </Link>
@@ -41,7 +45,11 @@ const GlobalNavigationBar = ({
       {searchInput && <SearchInput />}
       {search && (
         <Link to={ROUTES_PATH_SEARCH}>
-          <IconButton variant={"ghost"} aria-label='Search'>
+          <IconButton
+            variant={"ghost"}
+            aria-label="Search"
+            color={"var(--color-gray-900)"}
+          >
             <LuSearch />
           </IconButton>
         </Link>
