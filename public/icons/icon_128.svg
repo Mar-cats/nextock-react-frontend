@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_8_copy" data-name="Layer 8 copy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#New_Gradient_Swatch);
+      }
+
+      .cls-2 {
+        fill: url(#New_Gradient_Swatch_copy);
+      }
+    </style>
+    <linearGradient id="New_Gradient_Swatch" data-name="New Gradient Swatch" x1="59.62" y1="76.92" x2="59.62" y2="26.12" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4a3dff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#4a3dff"/>
+    </linearGradient>
+    <linearGradient id="New_Gradient_Swatch_copy" data-name="New Gradient Swatch copy" x1="-2336.65" y1="480.17" x2="-2336.65" y2="426.11" gradientTransform="translate(-2271.46 527.99) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff584d" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#ff584d"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-1" d="M61.2,76.92c-3.09,0-6.2-1.07-8.72-3.24l-24.27-20.91c-5.59-4.82-6.22-13.26-1.4-18.86,4.82-5.59,13.26-6.22,18.86-1.4l12.52,10.79c.94.81,2.37.71,3.19-.22l10.88-12.4c4.87-5.55,13.32-6.1,18.87-1.23,5.55,4.87,6.1,13.32,1.23,18.87l-21.11,24.05c-2.64,3.01-6.34,4.55-10.06,4.55Z"/>
+  <path class="cls-2" d="M91.06,101.88c-3.16,0-6.34-1.12-8.89-3.39l-18.89-16.82c-.95-.84-2.4-.75-3.24.2l-10.7,12.19c-4.87,5.55-13.32,6.1-18.87,1.23-5.55-4.87-6.1-13.32-1.23-18.87l21.11-24.05c2.35-2.68,5.67-4.31,9.23-4.53,3.56-.22,7.05.99,9.71,3.36l30.66,27.31c5.51,4.91,6,13.36,1.09,18.88-2.64,2.97-6.31,4.48-9.99,4.48Z"/>
+</svg>
