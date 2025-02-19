@@ -1,6 +1,6 @@
 import SubTitle from "@/components/common/SubTitle";
 import { VStack } from "@chakra-ui/react";
-import PillTags from "@/components/common/PillTags";
+import PillTags from "@/components/common/Pilltags";
 
 export default function () {
   return (
