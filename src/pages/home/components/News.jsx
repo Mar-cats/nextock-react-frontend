@@ -1,7 +1,7 @@
 import {
   ArticleAccodion,
   ArticleAccodionRoot
-} from "@/components/common/ArticleArccordion";
+} from "@/components/common/ArticleAccordion";
 import Title from "@/components/common/Title";
 import { SECTORS } from "@/constants/sector";
 import { Tabs, VStack } from "@chakra-ui/react";

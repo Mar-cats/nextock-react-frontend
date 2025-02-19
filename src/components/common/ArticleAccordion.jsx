@@ -4,7 +4,7 @@ import {
   AccordionItemContent,
   AccordionItemTrigger,
   AccordionRoot
-} from "@/components/ui/Accordion";
+} from "@/components/ui/accordion";
 import Hashtags from "@/components/common/Hashtags";
 import styled from "styled-components";
 
