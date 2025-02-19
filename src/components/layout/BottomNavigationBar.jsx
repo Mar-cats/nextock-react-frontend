@@ -21,7 +21,10 @@ const Container = styled(Center)`
     opacity: 0.2;
     border: 1px solid transparent;
     border-radius: 22px 22px 0 0;
-    background-image: linear-gradient(#fff, #fff),
+    background-image: linear-gradient(
+        var(--color-color-white),
+        var(--color-color-white)
+      ),
       linear-gradient(
         135deg,
         var(--color-color-black) 0%,
