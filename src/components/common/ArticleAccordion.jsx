@@ -1,4 +1,4 @@
-import { Box, Flex, VStack } from "@chakra-ui/react";
+import { Box, Flex, VStack, Text } from "@chakra-ui/react";
 import {
   AccordionItem,
   AccordionItemContent,
@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import Hashtags from "@/components/common/Hashtags";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const SubTitle = styled.h2`
   font-size: 12px;
@@ -14,6 +15,7 @@ const SubTitle = styled.h2`
   line-height: 1.2;
   color: var(--color-gray-800);
 `;
+
 const Title = styled.h1`
   font-size: 14px;
   font-weight: bold;
@@ -34,7 +36,19 @@ const AccordionItemTriggerStyled = styled(AccordionItemTrigger)`
   }
 `;
 
-const ArticleAccodion = ({ value, title, text, tags }) => {
+const LinkButton = styled(Link)`
+  color: var(--color-gray-800);
+  background-color: var(--color-gray-100);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 400;
+  padding: 4px 10px 6px;
+  line-height: 1.2;
+  text-decoration: underline;
+  text-underline-position: under;
+`;
+
+const ArticleAccodion = ({ value, title, text, tags, link }) => {
   return (
     <>
       <AccordionItem key={value} value={value}>
@@ -58,9 +72,10 @@ const ArticleAccodion = ({ value, title, text, tags }) => {
           </AccordionItemTriggerStyled>
         </Box>
         <AccordionItemContent>
-          <Flex direction='column' ps='30px' pt={"10px"}>
-            {text}
-          </Flex>
+          <VStack ps={"30px"} align='start' spacing='4'>
+            <Text>{text}</Text>
+            <LinkButton to={link}>원문 보기</LinkButton>
+          </VStack>
         </AccordionItemContent>
       </AccordionItem>
     </>
