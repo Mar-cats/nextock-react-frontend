@@ -54,7 +54,7 @@ const WordCloud = ({ words }) => {
   return (
     <Container gap={1}>
       <WordContainer h={isOpen ? "416px" : "360px"}>
-        {GRID_LAYOUTS[new Date().getDate() % 6].map((layout) => (
+        {GRID_LAYOUTS[new Date().getDate() % 6].map((layout, index) => (
           <WordItem
             key={layout.idx}
             colSpan={layout.w}
@@ -65,7 +65,8 @@ const WordCloud = ({ words }) => {
               {words[layout.idx].name}
             </WordTitle>
             <WordDescription>
-              {words[layout.idx].percent} ({words[layout.idx].changePercent})
+              {words[layout.idx].percent}{" "}
+              {index !== 9 && `(${words[layout.idx].changePercent})`}
             </WordDescription>
           </WordItem>
         ))}
