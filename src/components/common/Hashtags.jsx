@@ -1,20 +1,17 @@
-import { Flex } from "@chakra-ui/react";
 import styled from "styled-components";
 
-const Tag = styled.span`
+const StyledFlex = styled.span`
+  width: 100%;
   font-size: 12px;
   font-weight: 400;
   color: var(--color-gray-800);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Tags = ({ tags }) => {
-  return (
-    <Flex direction='row' gap='10px'>
-      {tags.map((tag, index) => (
-        <Tag key={index}>#{tag}</Tag>
-      ))}
-    </Flex>
-  );
+  return <StyledFlex>{tags.map((tag) => `#${tag}ㅤ`)}</StyledFlex>;
 };
 
 export default Tags;
