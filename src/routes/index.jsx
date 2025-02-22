@@ -20,10 +20,10 @@ export default function () {
     <BrowserRouter basename={ROUTES_BASENAME}>
       <Routes>
         <Route path={ROUTES_PATH_HOME} element={<Home />} />
-        <Route path={ROUTES_PATH_SECTOR} element={<Sector />} />
+        <Route path={`${ROUTES_PATH_SECTOR}/:sector`} element={<Sector />} />
         <Route path={ROUTES_PATH_SEARCH} element={<Search />} />
         <Route path={ROUTES_PATH_ROOT} element={<RootNavigator />} />
-        <Route path="*" element={<RootNavigator />} />
+        <Route path='*' element={<RootNavigator />} />
       </Routes>
     </BrowserRouter>
   );

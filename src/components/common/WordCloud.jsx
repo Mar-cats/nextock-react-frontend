@@ -4,6 +4,9 @@ import { IconButton } from "@chakra-ui/react";
 import { GRID_LAYOUTS } from "@/constants/gridLayouts";
 import { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { ROUTES_PATH_SECTOR } from "@/constants/routes";
+import { SECTORS } from "@/constants/sector";
 
 const Container = styled(VStack)`
   width: 100%;
@@ -51,6 +54,14 @@ const WordDescription = styled.div`
 
 const WordCloud = ({ words }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const handleClick = (word) => {
+    navigate(
+      `${ROUTES_PATH_SECTOR}/${
+        SECTORS.find((sector) => sector.name === word).key
+      }`
+    );
+  };
   return (
     <Container gap={1}>
       <WordContainer h={isOpen ? "416px" : "360px"}>
@@ -60,6 +71,7 @@ const WordCloud = ({ words }) => {
             colSpan={layout.w}
             rowSpan={layout.h}
             background={`var(--color-purple-${10 - layout.idx}00)`}
+            onClick={() => handleClick(words[layout.idx].name)}
           >
             <WordTitle style={{ fontSize: `${layout.w > 4 ? 16 : 12}px` }}>
               {words[layout.idx].name}

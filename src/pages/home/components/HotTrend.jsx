@@ -13,47 +13,47 @@ export default function () {
       changePercent: "+14%"
     },
     {
-      name: "테크",
+      name: "클라우드",
       percent: "20%",
       changePercent: "+10%"
     },
     {
-      name: "바이오",
+      name: "소프트웨어",
       percent: "15%",
       changePercent: "+5%"
     },
     {
-      name: "테슬라",
+      name: "소셜미디어",
       percent: "10%",
       changePercent: "+3%"
     },
     {
-      name: "패션",
+      name: "하드웨어",
       percent: "10%",
       changePercent: "+3%"
     },
     {
-      name: "자동차",
+      name: "AI",
       percent: "10%",
       changePercent: "+3%"
     },
     {
-      name: "프리미엄",
+      name: "사이버보안",
       percent: "10%",
       changePercent: "+3%"
     },
     {
-      name: "프리미엄",
+      name: "전기차",
       percent: "10%",
       changePercent: "+3%"
     },
     {
-      name: "프리미엄",
+      name: "AR/VR",
       percent: "10%",
       changePercent: "+3%"
     },
     {
-      name: "프리미엄",
+      name: "반도체",
       percent: "10%",
       changePercent: "+3%"
     }
