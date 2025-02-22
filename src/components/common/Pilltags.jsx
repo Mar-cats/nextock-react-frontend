@@ -15,7 +15,7 @@ const Tags = ({ tags, onClose, ...props }) => {
             {tag}
           </Tag.Label>
           {onClose && (
-            <Tag.EndElement>
+            <Tag.EndElement onClick={() => onClose(tag)}>
               <Tag.CloseTrigger />
             </Tag.EndElement>
           )}
