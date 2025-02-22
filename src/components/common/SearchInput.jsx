@@ -23,7 +23,7 @@ const SearchInput = () => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get("q");
-    setSearchValue(query);
+    if (query && query !== searchValue) setSearchValue(query);
   }, []);
   return (
     <InputGroup
