@@ -11,15 +11,20 @@ import { Link } from "react-router-dom";
 
 const SubTitle = styled.h2`
   font-size: 12px;
+  line-height: 16px;
   font-weight: 400;
-  line-height: 1.2;
   color: var(--color-gray-800);
 `;
 
 const Title = styled.h1`
+  height: 32px;
   font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -2.5%;
   font-weight: bold;
   color: var(--color-color-black);
+  display: flex;
+  align-items: center;
 `;
 
 const ArticleAccodionRoot = ({ children }) => {
@@ -59,9 +64,10 @@ const ArticleAccodion = ({ value, title, text, tags, link }) => {
                 gap={"10px"}
                 direction='row'
                 justify='space-between'
+                alignItems={"center"}
                 w={"100%"}
               >
-                <Flex direction={"column"} gap={"4px"} flex={1}>
+                <Flex direction={"column"} flex={1} gap={"8px"}>
                   <SubTitle>Bloombergㆍ2일전</SubTitle>
                   <Title>{title}</Title>
                 </Flex>
