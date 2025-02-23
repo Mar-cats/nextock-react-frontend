@@ -21,4 +21,14 @@ const useSearchStore = create((set) => ({
   },
 }));
 
-export { useSearchStore };
+const useSearchFocusStore = create((set) => ({
+  isFocus: true,
+  onFocus: () => {
+    set({isFocus: true})
+  },
+  offFocus: () => {
+    set({isFocus: false})
+  }
+}))
+
+export { useSearchStore, useSearchFocusStore };

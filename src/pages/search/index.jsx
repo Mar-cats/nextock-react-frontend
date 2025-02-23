@@ -3,8 +3,11 @@ import LayoutContainer from "@/components/layout/LayoutContainer";
 import ContentContainer from "@/components/layout/ContentContainer";
 import RecentSearch from "@/pages/search/components/RecentSearch";
 import PopularSearch from "@/pages/search/components/PopularSearch";
+import SearchedList from "./components/SearchedList";
+import { useSearchFocusStore } from '@/store/search';
 
 export default function () {
+  const { isFocus } = useSearchFocusStore();
   return (
     <LayoutContainer>
       <GlobalNavigationBar
@@ -15,8 +18,12 @@ export default function () {
         themeChanger={false}
       />
       <ContentContainer p={"6px 20px 0"} gap={"56px"}>
-        <RecentSearch />
-        <PopularSearch />
+        {isFocus ? (
+          <>
+            <RecentSearch />
+            <PopularSearch />
+          </>
+        ) : (<SearchedList />)}
       </ContentContainer>
     </LayoutContainer>
   );
