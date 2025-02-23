@@ -30,11 +30,11 @@ const WordItem = styled(GridItem)`
   align-items: center;
   overflow: hidden;
   border-radius: 4px;
-  color: var(--color-purple-50);
-  &:nth-child(8),
-  &:nth-child(9),
-  &:nth-child(10) {
-    color: var(--color-purple-1000);
+  color: var(--color-${(props) => props.$color}-graph-50);
+  &:nth-last-child(1),
+  &:nth-last-child(2),
+  &:nth-last-child(3) {
+    color: var(--color-${(props) => props.$color}-graph-1000);
   }
 `;
 
@@ -52,7 +52,7 @@ const WordDescription = styled.div`
   line-height: 16px;
 `;
 
-const WordCloud = ({ words, color = "purple" }) => {
+const WordCloud = ({ words, color = "blue" }) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const handleClick = (word) => {
@@ -71,8 +71,9 @@ const WordCloud = ({ words, color = "purple" }) => {
               <WordItem
                 colSpan={layout.w}
                 rowSpan={layout.h}
-                background={`var(--color-${color}-${10 - layout.idx}00)`}
+                background={`var(--color-${color}-graph-${10 - layout.idx}00)`}
                 onClick={() => handleClick(words[layout.idx].name)}
+                $color={color}
               >
                 <WordTitle style={{ fontSize: `${layout.w > 4 ? 16 : 12}px` }}>
                   {words[layout.idx].name}
