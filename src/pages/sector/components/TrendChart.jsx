@@ -5,9 +5,9 @@ import { toDateLabel, toMarkerLabel } from "@/utils/string";
 export default function () {
   const seriesData = [];
   const date = new Date();
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 30; i++) {
     seriesData.push({
-      y: Math.floor(Math.random() * 400),
+      y: i + Math.floor(Math.random() * 5),
       x: date.getTime()
     });
     date.setDate(date.getDate() + 1);
@@ -35,7 +35,8 @@ export default function () {
       }
     ],
     stroke: {
-      curve: "smooth"
+      curve: "smooth",
+      width: 1
     },
     dataLabels: {
       enabled: false
@@ -75,14 +76,12 @@ export default function () {
             strokeColor: "#fff"
           },
           label: {
-            text: toMarkerLabel(maxPoint),
             style: {
               background: "#fff",
               color: "#333",
               borderRadius: 6,
               border: "none"
-            },
-            offsetY: -20
+            }
           }
         },
         {
@@ -94,14 +93,12 @@ export default function () {
             strokeColor: "#fff"
           },
           label: {
-            text: toMarkerLabel(minPoint),
             style: {
               background: "#fff",
               color: "#333",
               borderRadius: 6,
               border: "none"
-            },
-            offsetY: -30
+            }
           }
         }
       ]
