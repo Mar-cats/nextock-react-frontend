@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { SECTORS } from "@/constants/sector";
 import { Tabs } from "@chakra-ui/react";
 import NewsWordCloud from "@/pages/sector/components/NewsWordCloud";
+import NewsList from "@/pages/sector/components/NewsList";
 
 export default function () {
   const { sector } = useParams();
@@ -26,6 +27,7 @@ export default function () {
           </Tabs.List>
           <Tabs.Content value={"news"}>
             <NewsWordCloud />
+            <NewsList />
           </Tabs.Content>
           <Tabs.Content value={"trend"}>
             <TrendChart />
