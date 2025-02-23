@@ -39,6 +39,8 @@ const SearchInput = () => {
         placeholder='검색어를 입력해주세요'
         variant='subtle'
         color={"var(--color-color-black)"}
+        border={"none"}
+        outline={"none"}
         value={searchValue}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
