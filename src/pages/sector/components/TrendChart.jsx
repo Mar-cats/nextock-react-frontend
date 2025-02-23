@@ -1,6 +1,7 @@
 import ApexCharts from "apexcharts";
 import { useEffect } from "react";
-import { toDateLabel, toMarkerLabel } from "@/utils/string";
+import { toDateLabel } from "@/utils/string";
+import { Flex } from "@chakra-ui/react";
 
 export default function () {
   const seriesData = [];
@@ -42,9 +43,11 @@ export default function () {
       enabled: false
     },
     xaxis: {
+      type: "category",
+      tickPlacement: "between",
       tickAmount: 3,
-      type: "datetime",
       labels: {
+        offsetX: 3,
         formatter: toDateLabel
       }
     },
@@ -102,6 +105,11 @@ export default function () {
           }
         }
       ]
+    },
+    tooltip: {
+      custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+        return `<span class="graph-tooltip">${series[seriesIndex][dataPointIndex]}</span>`;
+      }
     }
   };
   useEffect(() => {
@@ -111,5 +119,30 @@ export default function () {
       chart.destroy();
     };
   }, []);
-  return <div id='chart'></div>;
+  return (
+    <Flex w={"100%"}>
+      <div id='chart'></div>
+      <style jsx>{`
+        #chart {
+          width: 100%;
+          overflow: visible;
+        }
+        .graph-tooltip {
+          background: var(--color-color-white);
+          color: var(--color-color-black);
+          padding: 8px;
+          border-radius: 6px;
+        }
+        .apexcharts-text.apexcharts-xaxis-label {
+          font-size: 10px;
+          line-height: 12px;
+          letter-spacing: -0.25px;
+          color: var(--color-color-gray-800);
+        }
+        .apexcharts-text.apexcharts-xaxis-label > tspan:first-child {
+          font-weight: 600;
+        }
+      `}</style>
+    </Flex>
+  );
 }
