@@ -2,14 +2,7 @@ import { useParams } from "react-router-dom";
 import { SECTORS } from "@/constants/sector";
 import { Flex, VStack } from "@chakra-ui/react";
 import WordCloud from "@/components/common/WordCloud";
-import styled from "styled-components";
-
-const Title = styled.h2`
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 700;
-  color: var(--color--color-black);
-`;
+import { SubTitle } from "@/components/common/Title";
 
 export default function () {
   const { sector } = useParams();
@@ -44,11 +37,11 @@ export default function () {
     }
   ];
   return (
-    <VStack gap={"8px"}>
+    <VStack gap={"8px"} mb={"58px"}>
       <Flex justify={"space-between"} w={"100%"}>
-        <Title>
+        <SubTitle>
           {SECTORS.find((s) => s.key === sector)?.name}에서 집중하는 키워드
-        </Title>
+        </SubTitle>
       </Flex>
       <WordCloud words={words} color='gray' />
     </VStack>
