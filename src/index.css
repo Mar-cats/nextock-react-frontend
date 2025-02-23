@@ -9,6 +9,14 @@
   box-sizing: border-box;
   font-family: "Pretendard", sans-serif;
 }
+
+html {
+  background-color: var(--color-color-white);
+}
+html.dark {
+  background-color: var(--color-color-white);
+}
+
 :root {
   --color-blue-100: #edf1ff;
   --color-blue-200: #e0e8ff;

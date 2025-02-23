@@ -137,7 +137,7 @@ export default function () {
           font-size: 10px;
           line-height: 12px;
           letter-spacing: -0.25px;
-          color: var(--color-color-gray-800);
+          color: var(--color-gray-800);
         }
         .apexcharts-text.apexcharts-xaxis-label > tspan:first-child {
           font-weight: 600;
