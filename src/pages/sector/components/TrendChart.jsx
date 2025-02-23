@@ -5,7 +5,7 @@ import { toDateLabel, toMarkerLabel } from "@/utils/string";
 export default function () {
   const seriesData = [];
   const date = new Date();
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 10; i++) {
     seriesData.push({
       y: Math.floor(Math.random() * 400),
       x: date.getTime()
@@ -81,7 +81,8 @@ export default function () {
               color: "#333",
               borderRadius: 6,
               border: "none"
-            }
+            },
+            offsetY: -20
           }
         },
         {
@@ -100,7 +101,7 @@ export default function () {
               borderRadius: 6,
               border: "none"
             },
-            offsetY: 10
+            offsetY: -30
           }
         }
       ]
