@@ -73,7 +73,14 @@ const ArticleAccodion = ({ value, title, text, tags, link }) => {
         </Box>
         <AccordionItemContent>
           <VStack ps={"30px"} align='start' spacing='4'>
-            <Text>{text}</Text>
+            <Text
+              fontSize='12px'
+              lineHeight={"16px"}
+              fontWeight={"300"}
+              letterSpacing={"-0.18px"}
+            >
+              {text}
+            </Text>
             <LinkButton to={link}>원문 보기</LinkButton>
           </VStack>
         </AccordionItemContent>
