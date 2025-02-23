@@ -6,12 +6,17 @@ import { useEffect, useState } from "react";
 import { useSearchStore } from "@/store/search";
 import { ROUTES_PATH_SEARCH } from "@/constants/routes";
 import { useNavigate } from "react-router-dom";
+import { useSearchFocusStore } from '@/store/search';
 
 const SearchInput = () => {
   const [searchValue, setSearchValue] = useState("");
   const { addSearch } = useSearchStore();
+  const { onFocus, offFocus } = useSearchFocusStore();
   const navigate = useNavigate();
-  const handleClear = () => setSearchValue("");
+  const handleClear = () => {
+    setSearchValue("");
+    onFocus();
+  }
   const handleChange = (e) => {
     setSearchValue(e.target.value);
   };
@@ -19,6 +24,7 @@ const SearchInput = () => {
     if (e.code !== "Enter") return;
     addSearch(e.target.value);
     navigate(`${ROUTES_PATH_SEARCH}?q=${e.target.value}`);
+    offFocus();
   };
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -44,6 +50,7 @@ const SearchInput = () => {
         value={searchValue}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
+        onFocus={onFocus}
       />
     </InputGroup>
   );
