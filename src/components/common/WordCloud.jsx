@@ -2,7 +2,7 @@ import { Grid, GridItem, VStack, HStack } from "@chakra-ui/react";
 import { GoChevronUp, GoChevronDown } from "react-icons/go";
 import { IconButton } from "@chakra-ui/react";
 import { GRID_LAYOUTS } from "@/constants/gridLayouts";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ROUTES_PATH_SECTOR } from "@/constants/routes";
@@ -66,10 +66,9 @@ const WordCloud = ({ words, color = "purple" }) => {
     <Container gap={1}>
       <WordContainer h={isOpen ? "416px" : "360px"}>
         {GRID_LAYOUTS[new Date().getDate() % 6].map((layout, index) => (
-          <>
+          <Fragment key={index}>
             {words.length > layout.idx && (
               <WordItem
-                key={layout.idx}
                 colSpan={layout.w}
                 rowSpan={layout.h}
                 background={`var(--color-${color}-${10 - layout.idx}00)`}
@@ -86,7 +85,7 @@ const WordCloud = ({ words, color = "purple" }) => {
                 </WordDescription>
               </WordItem>
             )}
-          </>
+          </Fragment>
         ))}
       </WordContainer>
       {words.length > 8 && (
