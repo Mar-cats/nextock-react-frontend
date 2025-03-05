@@ -6,6 +6,7 @@ import { SubTitle } from "@/components/common/Title";
 import { SECTORS } from "@/constants/sector";
 import { Tabs, VStack } from "@chakra-ui/react";
 import styled from "styled-components";
+import { useState } from "react";
 
 const Scrollable = styled.div`
   width: 100%;
@@ -21,9 +22,15 @@ const Scrollable = styled.div`
 `;
 
 export default function () {
+  const [selectedSector, setSelectedSector] = useState("ecommerce");
   return (
     <VStack align={"start"} spacing={4}>
-      <Tabs.Root defaultValue="ecommerce" w={"100%"} overflow={"hidden"}>
+      <Tabs.Root
+        value={selectedSector}
+        onValueChange={(e) => setSelectedSector(e.value)}
+        w={"100%"}
+        overflow={"hidden"}
+      >
         <SubTitle style={{ marginLeft: 20 }}>산업별 뉴스</SubTitle>
         <Scrollable>
           <Tabs.List w={"max-content"}>
@@ -32,6 +39,7 @@ export default function () {
                 key={sector.key}
                 value={sector.key}
                 whiteSpace={"nowrap"}
+                fontWeight={selectedSector === sector.key ? "600" : "400"}
               >
                 {sector.name}
               </Tabs.Trigger>
