@@ -38,6 +38,7 @@ const GlobalNavigationBar = ({
             variant={"ghost"}
             aria-label="Search"
             color={"var(--color-gray-900)"}
+            ms={-4}
           >
             <GoChevronLeft />
           </IconButton>
