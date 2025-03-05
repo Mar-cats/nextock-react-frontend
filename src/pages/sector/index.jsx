@@ -20,16 +20,16 @@ export default function () {
         title={SECTORS.find((s) => s.key === sector).name}
       />
       <ContentContainer>
-        <Tabs.Root defaultValue='news' fitted>
+        <Tabs.Root defaultValue="news" fitted>
           <Tabs.List>
             <Tabs.Trigger value={"news"}>뉴스 탐색</Tabs.Trigger>
             <Tabs.Trigger value={"trend"}>트렌드 분석</Tabs.Trigger>
           </Tabs.List>
-          <Tabs.Content value={"news"}>
+          <Tabs.Content value={"news"} px={5}>
             <NewsWordCloud />
             <NewsList />
           </Tabs.Content>
-          <Tabs.Content value={"trend"}>
+          <Tabs.Content value={"trend"} px={5}>
             <TrendChart />
           </Tabs.Content>
         </Tabs.Root>

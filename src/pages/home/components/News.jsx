@@ -15,13 +15,16 @@ const Scrollable = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+  & > * {
+    padding: 0 20px;
+  }
 `;
 
 export default function () {
   return (
     <VStack align={"start"} spacing={4}>
       <Tabs.Root defaultValue="ecommerce" w={"100%"} overflow={"hidden"}>
-        <Title>산업별 뉴스</Title>
+        <Title style={{ marginLeft: 20 }}>산업별 뉴스</Title>
         <Scrollable>
           <Tabs.List w={"max-content"}>
             {SECTORS.map((sector) => (
@@ -36,7 +39,7 @@ export default function () {
           </Tabs.List>
         </Scrollable>
         {SECTORS.map((sector) => (
-          <Tabs.Content key={sector.key} value={sector.key}>
+          <Tabs.Content key={sector.key} value={sector.key} px={5}>
             {new Array(20).fill(0).map((_, idx) => (
               <ArticleAccodionRoot key={idx}>
                 <ArticleAccodion

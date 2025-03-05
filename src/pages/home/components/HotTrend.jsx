@@ -60,7 +60,7 @@ export default function () {
   ];
   const [unit, setUnit] = useState(["day"]);
   return (
-    <VStack gap={"8px"}>
+    <VStack gap={"8px"} px={5}>
       <Flex justify={"space-between"} w={"100%"}>
         <Title>{unitToString(unit[0])}간 트렌드</Title>
         <Select value={unit} setValue={setUnit} />
