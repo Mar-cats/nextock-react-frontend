@@ -2,7 +2,7 @@ import {
   ArticleAccodion,
   ArticleAccodionRoot
 } from "@/components/common/ArticleAccordion";
-import Title from "@/components/common/Title";
+import { SubTitle } from "@/components/common/Title";
 import { SECTORS } from "@/constants/sector";
 import { Tabs, VStack } from "@chakra-ui/react";
 import styled from "styled-components";
@@ -24,7 +24,7 @@ export default function () {
   return (
     <VStack align={"start"} spacing={4}>
       <Tabs.Root defaultValue="ecommerce" w={"100%"} overflow={"hidden"}>
-        <Title style={{ marginLeft: 20 }}>산업별 뉴스</Title>
+        <SubTitle style={{ marginLeft: 20 }}>산업별 뉴스</SubTitle>
         <Scrollable>
           <Tabs.List w={"max-content"}>
             {SECTORS.map((sector) => (
