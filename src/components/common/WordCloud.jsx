@@ -1,5 +1,4 @@
-import { Grid, GridItem, VStack, HStack } from "@chakra-ui/react";
-import { GoChevronUp, GoChevronDown } from "react-icons/go";
+import { Grid, GridItem, VStack, HStack, Icon, Text } from "@chakra-ui/react";
 import { IconButton } from "@chakra-ui/react";
 import { GRID_LAYOUTS } from "@/constants/gridLayouts";
 import { Fragment, useState } from "react";
@@ -7,6 +6,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ROUTES_PATH_SECTOR } from "@/constants/routes";
 import { SECTORS } from "@/constants/sector";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
 const Container = styled(VStack)`
   width: 100%;
@@ -95,18 +95,11 @@ const WordCloud = ({ words, color = "blue" }) => {
           aria-label={isOpen ? "Close" : "Open"}
           onClick={() => setIsOpen(!isOpen)}
           backgroundColor={"var(--color-gray-100)"}
-          color={"var(--color-gray-900)"}
+          color={"var(--color-gray-800)"}
         >
-          <HStack justify={"center"} align={"center"} gap={0}>
-            {isOpen ? (
-              <>
-                접기 <GoChevronUp width={24} height={24} />
-              </>
-            ) : (
-              <>
-                더보기 <GoChevronDown width={24} height={24} />
-              </>
-            )}
+          <HStack justify={"center"} align={"center"} gap={2}>
+            <Text>{isOpen ? "접기" : "더보기"}</Text>
+            <Icon size={"xs"}>{isOpen ? <FaAngleUp /> : <FaAngleDown />}</Icon>
           </HStack>
         </IconButton>
       )}
