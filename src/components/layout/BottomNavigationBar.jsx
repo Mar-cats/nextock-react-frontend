@@ -6,6 +6,8 @@ import styled from "styled-components";
 
 const MenuSpan = styled.span`
   font-size: 12px;
+  line-height: 14px;
+  color: var(--color-gray-800);
 `;
 
 const Container = styled(Center)`
@@ -44,7 +46,7 @@ const BottomNavigationBar = () => {
       <Link to={ROUTES_PATH_HOME}>
         <IconButton variant={"ghost"} aria-label={"Home"}>
           <VStack justify={"center"} align={"center"} gap={0}>
-            <HiMiniHome width={24} height={24} />
+            <HiMiniHome width={24} height={24} fill="var(--color-gray-800)" />
             <MenuSpan>Home</MenuSpan>
           </VStack>
         </IconButton>
