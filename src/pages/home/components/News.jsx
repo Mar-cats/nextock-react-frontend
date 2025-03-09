@@ -2,10 +2,11 @@ import {
   ArticleAccodion,
   ArticleAccodionRoot
 } from "@/components/common/ArticleAccordion";
-import Title from "@/components/common/Title";
+import { SubTitle } from "@/components/common/Title";
 import { SECTORS } from "@/constants/sector";
 import { Tabs, VStack } from "@chakra-ui/react";
 import styled from "styled-components";
+import { useState } from "react";
 
 const Scrollable = styled.div`
   width: 100%;
@@ -15,13 +16,22 @@ const Scrollable = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+  & > * {
+    padding: 0 20px;
+  }
 `;
 
 export default function () {
+  const [selectedSector, setSelectedSector] = useState("ecommerce");
   return (
     <VStack align={"start"} spacing={4}>
-      <Tabs.Root defaultValue="ecommerce" w={"100%"} overflow={"hidden"}>
-        <Title>산업별 뉴스</Title>
+      <Tabs.Root
+        value={selectedSector}
+        onValueChange={(e) => setSelectedSector(e.value)}
+        w={"100%"}
+        overflow={"hidden"}
+      >
+        <SubTitle style={{ marginLeft: 20 }}>산업별 뉴스</SubTitle>
         <Scrollable>
           <Tabs.List w={"max-content"}>
             {SECTORS.map((sector) => (
@@ -29,6 +39,7 @@ export default function () {
                 key={sector.key}
                 value={sector.key}
                 whiteSpace={"nowrap"}
+                fontWeight={selectedSector === sector.key ? "600" : "400"}
               >
                 {sector.name}
               </Tabs.Trigger>
@@ -36,7 +47,7 @@ export default function () {
           </Tabs.List>
         </Scrollable>
         {SECTORS.map((sector) => (
-          <Tabs.Content key={sector.key} value={sector.key}>
+          <Tabs.Content key={sector.key} value={sector.key} px={5}>
             {new Array(20).fill(0).map((_, idx) => (
               <ArticleAccodionRoot key={idx}>
                 <ArticleAccodion

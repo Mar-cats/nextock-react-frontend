@@ -19,6 +19,10 @@ const useSearchStore = create((set) => ({
     localStorage.setItem('recentSearches', JSON.stringify(newSearches));
     set({ searches: newSearches });
   },
+  removeAllSearch: () => {
+    localStorage.removeItem('recentSearches');
+    set({ searches: [] });
+  }
 }));
 
 const useSearchFocusStore = create((set) => ({

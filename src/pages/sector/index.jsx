@@ -8,9 +8,11 @@ import { SECTORS } from "@/constants/sector";
 import { Tabs } from "@chakra-ui/react";
 import NewsWordCloud from "@/pages/sector/components/NewsWordCloud";
 import NewsList from "@/pages/sector/components/NewsList";
+import { useState } from "react";
 
 export default function () {
   const { sector } = useParams();
+  const [selectedTab, setSelectedTab] = useState("news");
   return (
     <LayoutContainer>
       <GlobalNavigationBar
@@ -20,16 +22,20 @@ export default function () {
         title={SECTORS.find((s) => s.key === sector).name}
       />
       <ContentContainer>
-        <Tabs.Root defaultValue='news' fitted>
+        <Tabs.Root
+          fitted
+          value={selectedTab}
+          onValueChange={(e) => setSelectedTab(e.value)}
+        >
           <Tabs.List>
             <Tabs.Trigger value={"news"}>뉴스 탐색</Tabs.Trigger>
             <Tabs.Trigger value={"trend"}>트렌드 분석</Tabs.Trigger>
           </Tabs.List>
-          <Tabs.Content value={"news"}>
+          <Tabs.Content value={"news"} px={5}>
             <NewsWordCloud />
             <NewsList />
           </Tabs.Content>
-          <Tabs.Content value={"trend"}>
+          <Tabs.Content value={"trend"} px={5}>
             <TrendChart />
           </Tabs.Content>
         </Tabs.Root>

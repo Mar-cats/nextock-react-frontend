@@ -24,7 +24,7 @@ const GlobalNavigationBar = ({
   themeChanger = true
 }) => {
   return (
-    <Flex justify="space-between" align="center" p={4}>
+    <Flex justify="space-between" align="center" py={3} px={5}>
       {logo && (
         <Link to={ROUTES_PATH_HOME}>
           <IconButton variant={"ghost"} aria-label="Home">
@@ -38,6 +38,7 @@ const GlobalNavigationBar = ({
             variant={"ghost"}
             aria-label="Search"
             color={"var(--color-gray-900)"}
+            ms={-4}
           >
             <GoChevronLeft />
           </IconButton>

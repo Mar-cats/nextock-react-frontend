@@ -1,4 +1,4 @@
-import { Box, Flex, VStack, Text } from "@chakra-ui/react";
+import { Box, Flex, VStack, Text, Image, HStack } from "@chakra-ui/react";
 import {
   AccordionItem,
   AccordionItemContent,
@@ -17,19 +17,25 @@ const SubTitle = styled.h2`
 `;
 
 const Title = styled.h1`
-  height: 32px;
+  display: block;
+  max-width: 100%;
   font-size: 14px;
   line-height: 16px;
-  letter-spacing: -2.5%;
   font-weight: bold;
   color: var(--color-color-black);
-  display: flex;
   align-items: center;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 
 const ArticleAccodionRoot = ({ children }) => {
   return (
-    <AccordionRoot spaceY='4' collapsible defaultValue={["b"]}>
+    <AccordionRoot spaceY="4" collapsible defaultValue={["b"]}>
       {children}
     </AccordionRoot>
   );
@@ -57,30 +63,36 @@ const ArticleAccodion = ({ value, title, text, tags, link }) => {
   return (
     <>
       <AccordionItem key={value} value={value}>
-        <Box position='relative' overflow={"hidden"}>
-          <AccordionItemTriggerStyled indicatorPlacement='start'>
-            <VStack align='start' spacing='4' w={"100%"} maxW={"100%"}>
-              <Flex
+        <Box position="relative" overflow={"hidden"}>
+          <AccordionItemTriggerStyled indicatorPlacement="start">
+            <VStack align="start" spacing="4" w={"100%"} maxW={"100%"}>
+              <HStack
                 gap={"10px"}
-                direction='row'
-                justify='space-between'
+                justify="space-between"
                 alignItems={"center"}
                 w={"100%"}
+                h={"60px"}
               >
-                <Flex direction={"column"} flex={1} gap={"8px"}>
+                <VStack
+                  flex={1}
+                  h={"full"}
+                  gap={3}
+                  overflow={"hidden"}
+                  align={"start"}
+                >
                   <SubTitle>Bloombergㆍ2일전</SubTitle>
                   <Title>{title}</Title>
-                </Flex>
-                <img src='https://placehold.co/70x60' />
-              </Flex>
+                </VStack>
+                <Image src="https://placehold.co/70x60" w={"70px"} h={"60px"} />
+              </HStack>
               <Hashtags tags={tags} />
             </VStack>
           </AccordionItemTriggerStyled>
         </Box>
         <AccordionItemContent>
-          <VStack ps={"30px"} align='start' spacing='4'>
+          <VStack ps={"30px"} align="start" spacing="4">
             <Text
-              fontSize='12px'
+              fontSize="12px"
               lineHeight={"16px"}
               fontWeight={"300"}
               letterSpacing={"-0.18px"}
